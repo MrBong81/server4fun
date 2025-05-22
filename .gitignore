@@ -1,5 +1,8 @@
 .env
+<<<<<<< HEAD
 tailwindcss.exe
+=======
+>>>>>>> a120d27e948df1bddaa4d94522080d59dd19f2db
 tmp/*
 .air.toml
 todo.lua
