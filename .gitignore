@@ -1,2 +1,6 @@
 .env
+tailwindcss.exe
+tmp/*
+.air.toml
+todo.lua
 server4fun.exe
