@@ -16,12 +16,16 @@ func main() {
 
 	router := http.NewServeMux()
 
-	router.HandleFunc("/", ServeHome)
+	fs := http.FileServer(http.Dir("src"))
+	router.Handle("/src/", http.StripPrefix("/src/", fs))
+
+	router.HandleFunc("/test", ServeHome)
+
 	fmt.Println("Welcome to the backend jungle")
 	fmt.Printf("Secret port: %v\n", port)
-	log.Fatal(http.ListenAndServe(":6969", router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
 
 func ServeHome(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./src/homepage_tml.html")
+	http.ServeFile(w, r, "./src/templ/homepage_tml.html")
 }

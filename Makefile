@@ -1,2 +1,2 @@
 tailwind:
-	.\tailwindcss.exe -i .\src\styles\input.css -o .\src\styles\output.css --watch
+	.\tailwindcss.exe -i .\src\input.css -o .\src\output.css --watch
